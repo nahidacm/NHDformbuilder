@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>NHD Form Builder</title>
+	<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.17.custom.css">
+	<link rel="stylesheet" href="css/nhdformbuilder.css">
+        
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.ui.core.js"></script>
+	<script src="js/jquery.ui.widget.js"></script>
+	<script src="js/jquery.ui.mouse.js"></script>
+	<script src="js/jquery.ui.draggable.js"></script>
+	<script src="js/jquery.ui.droppable.js"></script>
+	<script src="js/jquery.ui.button.js"></script>
+	<script src="js/jquery.ui.sortable.js"></script>
+        
+	<script src="js/nhdformbuilder.js"></script>
+	<script src="js/label.js"></script>
+</head>
+<body>
+<div class="nhdfb">
+    
+    <div id="nhdfbtoolbox" class="nhdfbpanel ui-corner-all ui-widget-content">
+        <h2 class="ui-widget-header">Toolbox</h2>
+                
+        <ul>
+            <li>
+                <div id="label" class="fieldTypeBtn" >Text Label</div>
+            </li>
+        </ul>
+        
+    </div>
+    
+    <div id="nhdfbcanvas" class="nhdfbpanel ui-corner-all ui-widget-content">
+        <h2 class="ui-widget-header">Form Preview</h2>
+                
+        <ul id="placeholder">
+            <li class="temp_guid">Add your items here</li>
+        </ul>
+    </div>
+    
+    <div id="nhdfboptions" class="nhdfbpanel ui-corner-all ui-widget-content">
+        <h2 class="ui-widget-header">Options</h2>
+        
+        <div id="option_placehosder"></div>
+    </div>
+    
+</div>
+</body>
+</html>

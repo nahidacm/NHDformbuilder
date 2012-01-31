@@ -1,0 +1,26 @@
+Adding new HTML control:
+
+1. add that item to the nhdfbtoolbox div in NHDformBuilder.html
+    Example: <li>
+                <div id="label" class="fieldTypeBtn" >Text Label</div>
+            </li>
+better set the id as actual the html control name.
+
+2. Modify function appendInitialHtml(ui,placeholder) in file:nhdformbuilder.js (near line: 57 )
+
+Example: if(item_id == "label"){
+       jQuery( '<li class="'+new_item_class+'"><label id="'+new_element_id+'">'+ui.draggable.text()+'</label></li>' ).appendTo( placeholder );       
+    }
+
+add another if segment matching with the name you provided in 1st step.
+here you'll setup the initial html code of the control.
+
+
+3. create and include a new js file as label.js, name it with the html control id (is a convention)
+There you'll write the option bar's code, and the interaction between options and the canvas....
+
+
+TO DO: 
+Once enough html controls added successfully, entire form from the canvas , will converted to actual form html code.
+Plan is, simply export the ul and li from #nhdfbcanvas div, so, while you create the form controls keep this in mind,
+don't make these ul/li so much messy.....
