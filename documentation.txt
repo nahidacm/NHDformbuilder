@@ -15,8 +15,15 @@ Example: if(item_id == "label"){
 add another if segment matching with the name you provided in 1st step.
 here you'll setup the initial html code of the control.
 
+3. Modify jQuery( "#placeholder li" ).live('click',function(){})
+add another if segment like:
+        if(item_class == "label_element"){         
+           showLabelOptions(this); //label.js
+       }
+This calls the function of Options panel for this html control, happens when you click on a html control in the canvas.
 
-3. create and include a new js file as label.js, name it with the html control id (is a convention)
+
+4. create and include a new js file as label.js, include this toNHDformBuilder.html name it with the html control id (is a convention)
 There you'll write the option bar's code, and the interaction between options and the canvas....
 
 
@@ -24,3 +31,7 @@ TO DO:
 Once enough html controls added successfully, entire form from the canvas , will converted to actual form html code.
 Plan is, simply export the ul and li from #nhdfbcanvas div, so, while you create the form controls keep this in mind,
 don't make these ul/li so much messy.....
+
+Idea about Select option:
+into the right side option panel, on the sortable,closeable li's, store the whole <option> tag as text in a div, 
+to update canvas select options, read the options from li serially and then set those options to the dropdown...

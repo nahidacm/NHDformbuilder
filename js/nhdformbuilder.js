@@ -6,7 +6,11 @@ var nhdFBfocusedElementId; // Flag, keeps track of which field is now selected t
 jQuery(document).ready(function(){
     
     /* Settings for Primary status of canvas, option panel and the toolBox*/
-
+    jQuery('#delete_selected_element').button().click(function(){
+        jQuery('#'+nhdFBfocusedElementId).closest('li').remove();
+        jQuery('#option_placehosder').html('');
+    });
+    
     jQuery('.fieldTypeBtn').button();
     jQuery('.fieldTypeBtn').draggable({
         appendTo: "body",
@@ -39,10 +43,17 @@ jQuery(document).ready(function(){
        
        var item_class = jQuery(this).attr('class');
        
-       if(item_class == "label_element"){
-           
+       if(item_class == "label_element"){         
            showLabelOptions(this); //label.js
-           
+       }
+       if(item_class == "textbox_element"){         
+           showTextboxOptions(this); //textbox.js
+       }
+       if(item_class == "textarea_element"){         
+           showTextareaOptions(this); //textarea.js
+       }
+       if(item_class == "select_element"){         
+           showSelectOptions(this); //select.js
        }
        
     });
@@ -62,6 +73,16 @@ function appendInitialHtml(ui,placeholder){
     
     if(item_id == "label"){
        jQuery( '<li class="'+new_item_class+'"><label id="'+new_element_id+'">'+ui.draggable.text()+'</label></li>' ).appendTo( placeholder );       
+    }
+    if(item_id == "textbox"){
+       jQuery( '<li class="'+new_item_class+'"><input type="text" id="'+new_element_id+'" name="'+new_element_id+'" /></li>' ).appendTo( placeholder );       
+    }
+    if(item_id == "textarea"){
+       jQuery( '<li class="'+new_item_class+'"><textarea id="'+new_element_id+'" name="'+new_element_id+'"></textarea></li>' ).appendTo( placeholder );       
+    }
+    if(item_id == "select"){
+       jQuery( '<li class="'+new_item_class+'"><select id="'+new_element_id+'" name="'+new_element_id+'"></select></li>' ).appendTo( placeholder );       
+       
     }
         
 }

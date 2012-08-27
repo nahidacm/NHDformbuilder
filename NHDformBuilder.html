@@ -7,16 +7,13 @@
 	<link rel="stylesheet" href="css/nhdformbuilder.css">
         
 	<script src="js/jquery-1.7.1.min.js"></script>
-	<script src="js/jquery.ui.core.js"></script>
-	<script src="js/jquery.ui.widget.js"></script>
-	<script src="js/jquery.ui.mouse.js"></script>
-	<script src="js/jquery.ui.draggable.js"></script>
-	<script src="js/jquery.ui.droppable.js"></script>
-	<script src="js/jquery.ui.button.js"></script>
-	<script src="js/jquery.ui.sortable.js"></script>
-        
+	<script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+	    
 	<script src="js/nhdformbuilder.js"></script>
 	<script src="js/label.js"></script>
+	<script src="js/textbox.js"></script>
+	<script src="js/textarea.js"></script>
+	<script src="js/select.js"></script>
 </head>
 <body>
 <div class="nhdfb">
@@ -24,9 +21,18 @@
     <div id="nhdfbtoolbox" class="nhdfbpanel ui-corner-all ui-widget-content">
         <h2 class="ui-widget-header">Toolbox</h2>
                 
-        <ul>
+        <ul class="toolbox_list">
             <li>
                 <div id="label" class="fieldTypeBtn" >Text Label</div>
+            </li>
+            <li>
+                <div id="textbox" class="fieldTypeBtn" >Text Box</div>
+            </li>
+            <li>
+                <div id="textarea" class="fieldTypeBtn" >Text Area</div>
+            </li>
+            <li>
+                <div id="select" class="fieldTypeBtn" >DropDown/Select</div>
             </li>
         </ul>
         
@@ -44,6 +50,9 @@
         <h2 class="ui-widget-header">Options</h2>
         
         <div id="option_placehosder"></div>
+        
+        <div id="delete_selected_element">Remove This Element</div>
+        
     </div>
     
 </div>
