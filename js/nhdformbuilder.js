@@ -11,6 +11,7 @@ jQuery(document).ready(function(){
         jQuery('#option_placehosder').html('');
     });
     
+    
     jQuery('.fieldTypeBtn').button();
     jQuery('.fieldTypeBtn').draggable({
         appendTo: "body",
